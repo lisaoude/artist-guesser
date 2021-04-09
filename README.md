@@ -118,33 +118,24 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 </br> -->
 
 ### :microphone: API response
-<!-- After making a request to the API, you will receive some information about the GIFs. Below you can find what information you get and what it means.
+After making a request to the API, you will receive some information about the artworks. Below you can find what information you get and what it means.
 
 ```
 {
-"type":                // the type of image (mostly all GIFs)
-"id":                  // unique ID of the GIF
-"url":                 // URL of the GIF, on Giphy.com
-"slug":                // GIFs unique slug (used in the url)
-"bitly_gif_url":       // short URL, linking to Giphy.com
-"bitly_url":           // short URL, linking to Giphy.com
-"embed_url":           // embed URL
-"username":            // username of who posted the GIF
-"source":              // original source of the GIF
-"title":               // GIFs title
-"rating":              // GIFs MPAA-style rating, such as Y, G, PG, PG-13 and R
-"content_url":         // content URL, currently unused by Giphy
-"source_tld":          // top level domain of the original source
-"source_post_url":     // URL of the webpage on which the GIF was found
-"is_sticker":          // stating if the GIF can be used as a web sticker
-"import_datetime":     // the creation or upload date from the GIF
-"trending_datetime":   // the date on which this GIF was marked as trending
-"images": {}           // containing data for different formats and sizes of the GIF
-                       // such as original, downsized, fixed-height, fixed-width and stills
+"id":                       // ID of the artwork
+"objectNumber":             // object number of the artwork
+"title":                    // artworks title
+"longTitle":                // artworks long title
+"principleOrFirstMaker":    // artworks artist
+"hasImage":                 // tells us if the artwork has an image
+"showImage":                // tells us if an image is being shown
+"permitDownload":           // tells us if the image is allowed to be downloaded
+"webImage": {}              // the web image
+"headerImage": {}           // the header image
 }
 ```
 
-</br> -->
+</br>
 
 ---
 
