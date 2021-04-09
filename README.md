@@ -284,9 +284,8 @@ http://localhost:5500/
 
 Here's a list of things I'd love to add to Artist Guesser:
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] asdfghjk
+
 
 <!-- We all know creative developing projects are never _truly_ done..  
 These are some next steps that I would love to make:
