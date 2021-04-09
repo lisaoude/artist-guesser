@@ -10,7 +10,7 @@ _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-m
 
 ## :pencil2: App description
 
-Artist Guesser: the multiplayer game where you and your friends can guess the artist that made the artwqork shown on the screen!  
+**_Artist Guesser_**: the multiplayer game where you and your friends can guess the artist that made the artwqork shown on the screen!  
 
 The first player to say the correct artists name in the chat, get's 10 points added to their name. Still in first place after 10 rounds of guessing? You win!
 
