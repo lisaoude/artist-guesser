@@ -42,16 +42,14 @@ The first player to say the correct artists name in the chat, gets 10 points add
 
 
 ### General features
-<!-- - Gifinder can be downloaded, as any good PWA should be 
-- Caches pages both statically and dynamically 
-- Serves the user an offline page when they happen to be offline -->
+- Give points to the user that gave the correct answer first
+- Keep a scoreboard for the current session
 
 </br> 
 
 ### API based features
-<!-- - Fetch & show the trending GIFs on load
-- Fetch & show the user the GIF and details of the GIF they clicked on
-- Provide the user with feedback when hovering over a GIF -->
+- Fetch & show the an artwork 
+- Fetch & use the artworks artist
 
 </br>
 
@@ -115,24 +113,29 @@ The `${trendingType}` parameter fetches the trending GIFs at the moment. When us
 
 The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data that belongs to that ID.
 
-</br> -->
+-->
+
+</br>
 
 ### :microphone: API response
 After making a request to the API, you will receive some information about the artworks. Below you can find what information you get and what it means.
 
 ```
-{
-"id":                       // ID of the artwork
-"objectNumber":             // object number of the artwork
-"title":                    // artworks title
-"longTitle":                // artworks long title
-"principleOrFirstMaker":    // artworks artist
-"hasImage":                 // tells us if the artwork has an image
-"showImage":                // tells us if an image is being shown
-"permitDownload":           // tells us if the image is allowed to be downloaded
-"webImage": {}              // the web image
-"headerImage": {}           // the header image
-}
+"artObjects": [
+  {
+    "links": {}               // links to the artwork in the api or website
+    "id":                     // ID of the artwork
+    "objectNumber":           // object number of the artwork
+    "title":                  // artworks title
+    "longTitle":              // artworks long title
+    "principleOrFirstMaker":  // artworks artist
+    "hasImage":               // tells us if the artwork has an image
+    "showImage":              // tells us if an image is being shown
+    "permitDownload":         // tells us if the image is allowed to be downloaded
+    "webImage": {}            // the web image
+    "headerImage": {}         // the header image
+  }
+]
 ```
 
 </br>
