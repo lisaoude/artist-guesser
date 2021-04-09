@@ -10,9 +10,9 @@ _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-m
 
 ## :pencil2: App description
 
-**_Artist Guesser_**: the multiplayer game where you and your friends can guess the artist that made the artwqork shown on the screen!  
+**_Artist Guesser_**: the multiplayer game where you and your friends can guess the artist that made the artwork shown on the screen!  
 
-The first player to say the correct artists name in the chat, get's 10 points added to their name. Still in first place after 10 rounds of guessing? You win!
+The first player to say the correct artists name in the chat, gets 10 points added to their name. Still in first place after 10 rounds of guessing? You win!
 
 <!-- [My work can be viewed right here](https://gifinder-pwa.herokuapp.com/). -->
 
@@ -75,7 +75,7 @@ _All information can also be found on [the Rijksmuseum website](https://data.rij
 The below described possibilities apply to the Collection API.
 
 - Get a link to the art object on the Rijksmuseum website
-- Get the artworks':
+- Get the artworks:
   - ID
   - Object number
   - Title
@@ -131,7 +131,7 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 "embed_url":           // embed URL
 "username":            // username of who posted the GIF
 "source":              // original source of the GIF
-"title":               // GIF's title
+"title":               // GIFs title
 "rating":              // GIFs MPAA-style rating, such as Y, G, PG, PG-13 and R
 "content_url":         // content URL, currently unused by Giphy
 "source_tld":          // top level domain of the original source
@@ -281,6 +281,12 @@ http://localhost:5500/
 <!-------------------------- New Paragraph -------------------------->
 
 ## :crown: Wishlist
+
+Here's a list of things I'd love to add to Artist Guesser:
+
+- [ ] 
+- [ ] 
+- [ ] 
 
 <!-- We all know creative developing projects are never _truly_ done..  
 These are some next steps that I would love to make:
