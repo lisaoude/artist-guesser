@@ -44,7 +44,7 @@ The first player to say the correct artists name in the chat, gets 10 points add
 
 Before I came up with my final concept, I had a brainstorm session and thought of three concepts.
 
-![RTW_three_concepts](https://user-images.githubusercontent.com/57795294/114385486-63fc3100-9b90-11eb-8621-ba79cae01951.png)
+![RTW_three_concepts](https://user-images.githubusercontent.com/57795294/114388314-cefb3700-9b93-11eb-9f12-ff754daff115.png)
 
 </br>
 
