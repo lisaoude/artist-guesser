@@ -257,18 +257,18 @@ app.set('view engine', 'ejs');
 
 </br>
 
-### :large_blue_circle: dotenv
-[Dotenv](https://www.npmjs.com/package/dotenv) is a package that loads variables from a ```.env``` file.
+### :socks: socket.io
+[Socket.io](https://www.npmjs.com/package/socket.io) is a package that enables real-time event-based communication. This can be done using a NodeJS server and a JavaScript client library for the browser.
 
 </br>
 
-I installed dotenv, because it helps to store sensitive data (such as the API key), which can then be hidden from the GitHub repository using my ```.gitignore``` file.
+I installed socket.io to implement the real-time chat feature for my project.
 
 ```
-npm i dotenv
+npm i socket.io
 ```
 ```
-require('dotenv').config();
+const io = require('socket.io')(http)
 ```
 
 </br>
@@ -289,7 +289,25 @@ const fetch = require('node-fetch');
 
 </br>
 
+### :large_blue_circle: dotenv
+[Dotenv](https://www.npmjs.com/package/dotenv) is a package that loads variables from a ```.env``` file.
+
+</br>
+
+I installed dotenv, because it helps to store sensitive data (such as the API key), which can then be hidden from the GitHub repository using my ```.gitignore``` file.
+
+```
+npm i dotenv
+```
+```
+require('dotenv').config();
+```
+
+</br>
+
 ---
+
+
 
 <!-------------------------- New Paragraph -------------------------->
 
@@ -357,4 +375,5 @@ This repository is licensed as [MIT](https://github.com/lisaoude/real-time-web-2
 - npm: nodemon. (2021, January 6). Retrieved April 9, 2021, from [NPMjs.com](https://www.npmjs.com/package/nodemon)
 - npm: dotenv. (2019, October 16). Retrieved April 9, 2021, from [NPMjs.com](https://www.npmjs.com/package/dotenv)
 - npm: node-fetch. (2020, September 5). Retrieved April 9, 2021, from [NPMjs.com](https://www.npmjs.com/package/node-fetch)
+- npm: socket.io. (2021, April 1). Retrieved April 12, 2021, from [NPMjs.com](https://www.npmjs.com/package/socket.io)
 
