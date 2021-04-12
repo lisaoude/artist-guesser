@@ -24,13 +24,37 @@ The first player to say the correct artists name in the chat, gets 10 points add
 
 ## :pushpin: Table of Contents
 
+- [Three Concepts](#three-Three-Concepts)
+- [Chosen Concept](#sparkles-Chosen-Concept)
 - [What does this Web App do?](#gem-What-does-this-Web-App-do?)
+- [Wishlist](#crown-Wishlist)
 - [API](#link-API)
 - [Used Packages](#gift-Used-Packages)
 - [Install](#inbox_tray-Install)
-- [Wishlist](#crown-Wishlist)
 - [License](#closed_lock_with_key-License)
 - [Sources](#books-Sources)
+
+</br>
+
+---
+
+<!-------------------------- New Paragraph -------------------------->
+
+## :three: Three Concepts 
+
+Before I came up with my final concept, I had a brainstorm session and thought of three concepts.
+
+![RTW_three_concepts](https://user-images.githubusercontent.com/57795294/114385486-63fc3100-9b90-11eb-8621-ba79cae01951.png)
+
+</br>
+
+---
+
+<!-------------------------- New Paragraph -------------------------->
+
+## :sparkles: Chosen Concept
+
+The concept I chose is the second one - the Artist Guesser.
 
 </br>
 
@@ -52,6 +76,21 @@ The first player to say the correct artists name in the chat, gets 10 points add
 - Fetch & use the artworks artist
 
 </br>
+
+---
+
+<!-------------------------- New Paragraph -------------------------->
+
+## :crown: Wishlist
+
+Here's a list of things I'd love to add to Artist Guesser:
+
+- [ ] feature1
+- [ ] feature2
+- [ ] feature3
+
+
+<br/>
 
 ---
 
@@ -267,33 +306,6 @@ Almost done! We just need to navigate to the localhost in the browser.
 ```
 http://localhost:5500/
 ```
-
-<br/>
-
----
-
-<!-------------------------- New Paragraph -------------------------->
-
-## :crown: Wishlist
-
-Here's a list of things I'd love to add to Artist Guesser:
-
-- [ ] feature1
-- [ ] feature2
-- [ ] feature3
-
-
-<!-- We all know creative developing projects are never _truly_ done..  
-These are some next steps that I would love to make:
-
-- Make it possible to let the users search for GIFs
-- Let the users save GIFs to a favorites list
-- Let the users save GIFs to a special collection, which the user can name themselves (e.g. funny GIFs, cat GIFs, etc.)
-- Give Gifinder a random mode, which returns a random GIF to the user after a button press
-- Autocomplete user input with a list of valid terms that completes what the user has typed into the input field
-- Provide users with a list of GIF categories
-- Provide users with a list of the trending search terms
-- Suggest searches to users -->
 
 <br/>
 
