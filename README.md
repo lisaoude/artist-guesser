@@ -83,14 +83,40 @@ The concept I chose is the second one - the Artist Guesser.
 
 ## :crown: Wishlist
 
-Here's a list of things I'd love to add to Artist Guesser:
+Below is a list of features I'd love to add to Artist Guesser. The features are split up using the **M**o**SC**o**W** method.
 
+
+**M** - Must haves
+_These features are like requirements for the end product_
 - [ ] feature1
 - [ ] feature2
 - [ ] feature3
 
+</br>
 
-<br/>
+**S** - Should haves
+_These features are wanted, but not necessary for a usable product_
+- [ ] feature1
+- [ ] feature2
+- [ ] feature3
+
+</br>
+
+**C** - Could haves
+_These features can be added if these enough time to do so_
+- [ ] feature1
+- [ ] feature2
+- [ ] feature3
+
+</br>
+
+**W** - Would haves
+_These features can be added in the future_
+- [ ] feature1
+- [ ] feature2
+- [ ] feature3
+
+</br>
 
 ---
 
