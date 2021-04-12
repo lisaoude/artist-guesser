@@ -1,18 +1,33 @@
-var socket = io()
-var messages = document.querySelector('section ul')
-var input = document.querySelector('input')
+const socket = io.connect(window.location.origin)
+const form = document.querySelector('form')
+const username = form.querySelector('input#name')
+const message = form.querySelector('input#message')
+const messages = document.querySelector('#messages')
 
-document.querySelector('form').addEventListener('submit', (event) => {
-  event.preventDefault()
-  if (input.value) {
-    socket.emit('message', input.value)
-    input.value = ''
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  if (message.value) {
+    socket.emit('chat', {
+      name: username.value,
+      message: message.value
+    })
+    username.style.display = 'none'
+    message.value = ''
   }
 })
 
-socket.on('message', function (message) {
-  var element = document.createElement('li')
-  element.textContent = message
-  messages.appendChild(element)
+
+socket.on('chat', data => {
+  const el = document.createElement('li')
+  const name = document.createElement('p')
+  const message = document.createElement('p')
+  name.innerText = data.name
+  message.innerText = data.message
+  name.classList.add('chat-name')
+  message.classList.add('chat-message')
+  el.classList.add(data.name === username.value ? 'own-message' : 'message')
+  el.appendChild(name)
+  el.appendChild(message)
+  messages.appendChild(el)
   messages.scrollTop = messages.scrollHeight
 })
