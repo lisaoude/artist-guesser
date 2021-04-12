@@ -33,7 +33,7 @@ section {
   align-items: center;
 }
 
-section h2 {
+section h1 {
   margin: 0;
   padding: 0;
   padding-top: 1rem;
@@ -42,7 +42,7 @@ section h2 {
   font-size: 1rem;
 }
 
-section h2 span {
+section h1 span {
   font-size: .5rem;
   display: inline-block;
   width: 4.5rem;
