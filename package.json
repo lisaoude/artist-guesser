@@ -2,7 +2,7 @@
   "name": "real-time-web-2021",
   "version": "1.0.0",
   "description": "a real-time web app for an artist guesser game",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
