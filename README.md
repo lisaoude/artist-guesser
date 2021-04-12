@@ -268,7 +268,10 @@ I installed socket.io to implement the real-time chat feature for my project.
 npm i socket.io
 ```
 ```
-const io = require('socket.io')(http)
+const socket = require('socket.io')
+```
+```
+const io = socket(server)
 ```
 
 </br>
