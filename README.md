@@ -83,38 +83,37 @@ The concept I chose is the second one - the Artist Guesser.
 
 ## :crown: Wishlist
 
-Below is a list of features I'd love to add to Artist Guesser. The features are split up using the **M**o**SC**o**W** method.
+Below is a list of features I'd love to add to Artist Guesser. The features are split up using the **M**o**SC**o**W** method.  
 
 
-**M** - Must haves
-_These features are like requirements for the end product_
-- [ ] feature1
-- [ ] feature2
-- [ ] feature3
-
-</br>
-
-**S** - Should haves
-_These features are wanted, but not necessary for a usable product_
-- [ ] feature1
-- [ ] feature2
-- [ ] feature3
+**M** - Must haves  
+_These features are like requirements for the end product_  
+- [ ] Set up chat
+- [ ] Connect API
+- [ ] Set up logic for guessing (answer must match artist name)
+- [ ] Go to next page after guessing correctly
 
 </br>
 
-**C** - Could haves
-_These features can be added if these enough time to do so_
-- [ ] feature1
-- [ ] feature2
-- [ ] feature3
+**S** - Should haves  
+_These features are wanted, but not necessary for a usable product_  
+- [ ] Randomize order of artworks
+- [ ] Set up point system
+- [ ] Set up scoreboard
+- [ ] Add nice styling
 
 </br>
 
-**W** - Would haves
-_These features can be added in the future_
-- [ ] feature1
-- [ ] feature2
-- [ ] feature3
+**C** - Could haves  
+_These features can be added if these enough time to do so_  
+- [ ] Give hints if the correct answer hasn't been given after a certain amount of time
+
+</br>
+
+**W** - Would haves  
+_These features can be added in the future_  
+- [ ] Set up all time best scoreboard
+- [ ] Set up point system based on time (1000 points to start, lose 1 point every millisecond you don't answer correctly)
 
 </br>
 
@@ -158,6 +157,8 @@ I have implemented the following points into **_Artist Guesser_**:
 </br>
 
 ### :end: Endpoint & parameters
+
+TBD
 <!-- Gifinder uses one main endpoint, which can be seen below.  
 
 ```
