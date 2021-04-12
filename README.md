@@ -88,7 +88,7 @@ Below is a list of features I'd love to add to Artist Guesser. The features are 
 
 **M** - Must haves  
 _These features are like requirements for the end product_  
-- [ ] Set up chat
+- [x] Set up chat with usernames 
 - [ ] Connect API
 - [ ] Set up logic for guessing (answer must match artist name)
 - [ ] Go to next page after guessing correctly
@@ -97,6 +97,7 @@ _These features are like requirements for the end product_
 
 **S** - Should haves  
 _These features are wanted, but not necessary for a usable product_  
+- [ ] Put own messages on the right side of the chat
 - [ ] Randomize order of artworks
 - [ ] Set up point system
 - [ ] Set up scoreboard
@@ -271,7 +272,7 @@ npm i socket.io
 const socket = require('socket.io')
 ```
 ```
-const io = socket(server)
+const io = socket(http)
 ```
 
 </br>
