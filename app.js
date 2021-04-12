@@ -2,10 +2,11 @@
 const
   express = require('express'),
   app = express(),
-  server = require('http').createServer(app),
+  http = require('http').createServer(app),
+  path = require('path'),
 
-  socket = require('socket.io'),
-  io = socket(server),
+  io = require('socket.io')(http),
+  port = process.env.PORT || 5000,
 
   fetch = require('node-fetch');
 ;
@@ -19,19 +20,21 @@ app
 // .set('view engine', 'ejs');
 
 
-// Internals
-const PORT = process.env.PORT || 5000;
-
-
 // Socket.io
 io.on('connection', socket => {
-  socket.on('chat', data => {
-    io.emit('chat', data)
+  console.log('a user has connected')
+
+  socket.on('message', (message) => {
+    io.emit('message', message)
+  })
+
+  socket.on('disconnect', () => {
+    console.log('a user had disconnected')
   })
 })
 
 
 // Listen for requests
-app.listen(PORT, () => {
-  console.log(`App is launched on http://localhost:${PORT}`)
+http.listen(port, () => {
+  console.log(`App is launched on http://localhost:${port}`)
 })
