@@ -3,11 +3,8 @@ const
   express = require('express'),
   app = express(),
   http = require('http').createServer(app),
-  path = require('path'),
-
   io = require('socket.io')(http),
   port = process.env.PORT || 5000,
-
   fetch = require('node-fetch');
 ;
 
