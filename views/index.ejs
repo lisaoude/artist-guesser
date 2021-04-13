@@ -1,6 +1,16 @@
 <%- include('./partials/head.ejs') %>
 
   <main>
+
+    <section>
+      <% artList.forEach(artobject=> { %>
+
+        <img src="<%=artobject.webImage.url %>" alt="<%=artobject.title %>">
+
+        <% }); %>
+
+    </section>
+
     <section>
       <h1>Artist Guesser</h1>
       <%= headTwo %>
