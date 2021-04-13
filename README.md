@@ -97,12 +97,11 @@ _These features are like requirements for the end product_
 
 **S** - Should haves  
 _These features are wanted, but not necessary for a usable product_  
+- [ ] Add nice styling
 - [ ] Put own messages on the right side of the chat
 - [ ] Randomize order of artworks
 - [ ] Set up point system
 - [ ] Set up scoreboard
-- [ ] Add nice styling
-
 </br>
 
 **C** - Could haves  
