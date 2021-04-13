@@ -11,10 +11,15 @@ const
 require('dotenv').config();
 
 
+// Routes
+const routes = require('./router/routes');
+
+
 // Middleware & Static files
 app
-  .use(express.static('public'));
-// .set('view engine', 'ejs');
+  .set('view engine', 'ejs')
+  .use(express.static('public'))
+  .use(routes);
 
 
 // Socket.io
