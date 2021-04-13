@@ -1,0 +1,16 @@
+<%- include('./partials/head.ejs') %>
+
+  <main>
+    <section>
+      <h1>Artist Guesser</h1>
+      <%= headTwo %>
+        <ul id='messages'></ul>
+        <form>
+          <input id='name' type='text' placeholder='naam'>
+          <input id='message' type="text" placeholder='bericht'>
+          <button type='submit'>Send</button>
+        </form>
+    </section>
+  </main>
+
+  <%- include('./partials/footer.ejs') %>
