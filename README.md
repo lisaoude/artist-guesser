@@ -15,6 +15,7 @@ _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-m
 The first player to say the correct artists name in the chat, gets 10 points added to their name. Still in first place after 10 rounds of guessing? You win!
 
 [My work can be viewed right here](https://artist-guesser.herokuapp.com/).
+_Note: styling is definitely no where near done yet_
 
 </br> 
 
