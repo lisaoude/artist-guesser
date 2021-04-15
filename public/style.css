@@ -96,3 +96,8 @@ section form > button {
   font-size: 1rem;
   font-weight: 700;
 }
+
+img {
+  width: 15em;
+  height: 15em;
+}
