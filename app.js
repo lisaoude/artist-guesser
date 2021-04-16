@@ -1,3 +1,6 @@
+// Require dotenv
+require('dotenv').config();
+
 // Externals
 const
   express = require('express'),
@@ -7,8 +10,6 @@ const
   port = process.env.PORT || 5000,
   fetch = require('node-fetch');
 ;
-
-require('dotenv').config();
 
 
 // Routes
