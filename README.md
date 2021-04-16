@@ -229,10 +229,6 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 </br>
 
 
----
-
-<!-------------------------- New Paragraph -------------------------->
-
 ### :circus_tent: Real-Time Events
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -244,8 +240,6 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 
 </br>
 
-
----
 
 <!-------------------------- New Paragraph -------------------------->
 
