@@ -2,7 +2,7 @@
 
 _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-minor-web)_
 
-<!-- ![Gifinder Mockups](https://user-images.githubusercontent.com/57795294/111635461-c7947800-87f7-11eb-94dc-198ce14e6aaa.png) -->
+<!-- ![Mockups](https://user-images.githubusercontent.com/57795294/111635461-c7947800-87f7-11eb-94dc-198ce14e6aaa.png) -->
 
 ---
 
@@ -30,6 +30,14 @@ _Note: styling is definitely no where near done yet_
 - [What does this Web App do?](#gem-What-does-this-Web-App-do?)
 - [Wishlist](#crown-Wishlist)
 - [API](#link-API)
+  - [Which API did I use?](#question-Which-API-did-I-use?)
+  - [API response](#microphone-API-response)
+  - [What did I do with this API?](#raising_hand-What-did-I-do-with-this-API?)
+  - [Used endpoints & parameters](#end-Used-endpoint-&-parameters)
+  - [Get the API key](#key-Get-the-API-key)
+  - [Connect to the API](#electric_plug-Connect-to-the-API)
+  - [Real-Time Events](#circus_tent-Real-Time-Events)
+  - [Data Lifecycle Diagram](#baby-older_man-Data-Lifecycle-Diagram)
 - [Used Packages](#gift-Used-Packages)
 - [Install](#inbox_tray-Install)
 - [License](#closed_lock_with_key-License)
@@ -210,6 +218,38 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 </br>
 
 ### :electric_plug: Connect to the API
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+</br>
+
+
+---
+
+<!-------------------------- New Paragraph -------------------------->
+
+### :circus_tent: Real-Time Events
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+</br>
+
+
+---
+
+<!-------------------------- New Paragraph -------------------------->
+
+### :baby::older_man: Data Lifecycle Diagram
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
