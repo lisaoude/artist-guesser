@@ -133,20 +133,28 @@ For this project I used the *Collection API*, with which you can search the coll
 
 </br>
 
-### :eyes: What can you do with this API?
+### :microphone: API response
+After making a request to the API, you will receive some information about the artworks. Below you can find what information you get and what it means.
 
 _All information can also be found on [the Rijksmuseum website](https://data.rijksmuseum.nl/object-metadata/api/)_
 
-The below described possibilities apply to the Collection API.
-
-- Get a link to the art object on the Rijksmuseum website
-- Get the artworks:
-  - ID
-  - Object number
-  - Title
-  - Long title
-  - Image
-  - Artist
+```
+"artObjects": [
+  {
+    "links": {}               // links to the artwork in the api or website
+    "id":                     // ID of the artwork
+    "objectNumber":           // object number of the artwork
+    "title":                  // artworks title
+    "longTitle":              // artworks long title
+    "principleOrFirstMaker":  // artworks artist
+    "hasImage":               // tells us if the artwork has an image
+    "showImage":              // tells us if an image is being shown
+    "permitDownload":         // tells us if the image is allowed to be downloaded
+    "webImage": {}            // the web image
+    "headerImage": {}         // the header image
+  }
+]
+```
 
 </br>
 
@@ -155,11 +163,15 @@ The below described possibilities apply to the Collection API.
 I have implemented the following points into **_Artist Guesser_**:
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 </br>
 
-### :end: Endpoint & parameters
+### :end: Used endpoint & parameters
 
 TBD
 <!-- Gifinder uses one main endpoint, which can be seen below.  
@@ -186,28 +198,28 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 
 </br>
 
-### :microphone: API response
-After making a request to the API, you will receive some information about the artworks. Below you can find what information you get and what it means.
+### :key: Get the API key
 
-```
-"artObjects": [
-  {
-    "links": {}               // links to the artwork in the api or website
-    "id":                     // ID of the artwork
-    "objectNumber":           // object number of the artwork
-    "title":                  // artworks title
-    "longTitle":              // artworks long title
-    "principleOrFirstMaker":  // artworks artist
-    "hasImage":               // tells us if the artwork has an image
-    "showImage":              // tells us if an image is being shown
-    "permitDownload":         // tells us if the image is allowed to be downloaded
-    "webImage": {}            // the web image
-    "headerImage": {}         // the header image
-  }
-]
-```
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 </br>
+
+### :electric_plug: Connect to the API
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+</br>
+
 
 ---
 
