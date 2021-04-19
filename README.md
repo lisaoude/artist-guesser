@@ -119,6 +119,7 @@ _These features are wanted, but not necessary for a usable product_
 **C** - Could haves  
 _These features can be added if these enough time to do so_  
 - [ ] Give hints if the correct answer hasn't been given after a certain amount of time
+- [ ] Create rooms so multiple groups can play their own game at once
 
 </br>
 
