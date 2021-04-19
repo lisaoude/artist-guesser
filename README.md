@@ -113,6 +113,7 @@ _These features are wanted, but not necessary for a usable product_
 - [ ] Randomize order of artworks
 - [ ] Set up point system
 - [ ] Set up scoreboard
+
 </br>
 
 **C** - Could haves  
