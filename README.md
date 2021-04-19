@@ -216,7 +216,7 @@ In order to access the API, you'll need to get an API key first. You can do so b
 
 Below can be seen how I connect to the API and show the data on my index page.  
 
-[First I fetch the data](https://github.com/lisaoude/artist-guesser/blob/main/router/renders/index.js) using the url, my API key and a limit, which I have stored inside an ```.env``` file. When the fetch had been completed, an async function is carried out in which I store the data inside my ```artList``` variable. After that I render my index page, in which I use my artList variable.  
+[First I fetch the data](https://github.com/lisaoude/artist-guesser/blob/main/router/renders/index.js) using the url, my API key and a limit, which I have stored inside an ```.env``` file. When the fetch has been completed, an async function is carried out in which I store the data inside my ```artList``` variable. After that I render my index page, in which I use my ```artList``` variable.  
 
 ```
 const index = (req, res) => {
