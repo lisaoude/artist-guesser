@@ -12,7 +12,7 @@ const key = process.env.KEY;
 const limit = process.env.LIMIT;
 
 const index = (req, res) => {
-  fetch(`${url}?key=${key}&ps=${limit}`)
+  fetch(`${url}?key=${key}&ps=${limit}&toppieces=true`)
     .then(async response => {
       const data = await response.json()
       const artList = data.artObjects
