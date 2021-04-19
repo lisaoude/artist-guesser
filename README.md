@@ -53,7 +53,7 @@ _Note: styling is definitely no where near done yet_
 
 Before I came up with my final concept, I had a brainstorm session and thought of three concepts.
 
-![RTW_three_concepts](https://user-images.githubusercontent.com/57795294/114388314-cefb3700-9b93-11eb-9f12-ff754daff115.png)
+![RTW_three_concepts](https://user-images.githubusercontent.com/57795294/115205935-5a2b7e00-a0fa-11eb-985e-cd557eb4e846.png)
 
 </br>
 
