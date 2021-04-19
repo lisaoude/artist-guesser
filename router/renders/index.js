@@ -18,7 +18,7 @@ const index = (req, res) => {
       const artList = data.artObjects
 
       res.render('index', {
-        headTwo: 'hoi head two',
+        headTwo: 'Who made this artwork?',
         artList: artList
       });
     });
