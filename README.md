@@ -181,7 +181,6 @@ I have implemented the following points into **_Artist Guesser_**:
 
 ### :end: Used endpoint & parameters
 
-TBD
 <!-- Gifinder uses one main endpoint, which can be seen below.  
 
 ```
@@ -208,23 +207,43 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 
 ### :key: Get the API key
 
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+In order to access the API, you'll need to get an API key first. You can do so by registering for a [Rijksstudio account](https://www.rijksmuseum.nl/en/rijksstudio). After registrating, you will receive your API key right away, which you can find in the advanced settings of your newly created Rijksstudio account.
+
 
 </br>
 
 ### :electric_plug: Connect to the API
 
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+Below can be seen how I connect to the API and show the data on my index page.  
+
+[First I fetch the data](https://github.com/lisaoude/artist-guesser/blob/main/router/renders/index.js) using the url, my API key and a limit, which I have stored inside an ```.env``` file. When the fetch had been completed, an async function is carried out in which I store the data inside my ```artList``` variable. After that I render my index page, in which I use my artList variable.  
+
+```
+const index = (req, res) => {
+  fetch(`${url}?key=${key}&ps=${limit}`)
+    .then(async response => {
+      const data = await response.json()
+      const artList = data.artObjects
+
+      res.render('index', {
+        headTwo: 'Who made this artwork?',
+        artList: artList
+      });
+    });
+};
+```
+
+</br>
+
+[In my ```EJS``` file](https://github.com/lisaoude/artist-guesser/blob/main/views/index.ejs) can be seen how I then show the images on my index page.
+
+```
+<% artList.forEach(artobject=> { %>
+
+   <img src="<%=artobject.webImage.url %>" alt="<%=artobject.title %>">
+
+<% }); %>
+```
 
 </br>
 
