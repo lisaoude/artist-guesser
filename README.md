@@ -107,8 +107,8 @@ _These features are like requirements for the end product_
 
 **S** - Should haves  
 _These features are wanted, but not necessary for a usable product_  
-- [ ] Style API Images
-- [ ] Add nice styling
+- [ ] Add styling
+- [ ] Implement UI states
 - [ ] Put own messages on the right side of the chat
 - [ ] Randomize order of artworks
 - [ ] Set up point system
