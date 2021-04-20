@@ -11,11 +11,11 @@ _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-m
 ## :pencil2: App description
 
 **_Artist Guesser_**: the multiplayer game where you and your friends can guess the artist that made the artwork shown on the screen!  
+The first player to say the correct artists name in the chat, wins that round!
 
-The first player to say the correct artists name in the chat, gets 10 points added to their name. Still in first place after 10 rounds of guessing? You win!
+<!-- The first player to say the correct artists name in the chat, gets 10 points added to their name. Still in first place after 10 rounds of guessing? You win! -->
 
 [My work can be viewed right here](https://artist-guesser.herokuapp.com/).  
-_Note: styling is definitely no where near done yet_
 
 </br> 
 
@@ -35,7 +35,6 @@ _Note: styling is definitely no where near done yet_
   - [What did I do with this API?](#raising_hand-What-did-I-do-with-this-API?)
   - [Used endpoints & parameters](#end-Used-endpoint-&-parameters)
   - [Get the API key](#key-Get-the-API-key)
-  - [Connect to the API](#electric_plug-Connect-to-the-API)
   - [Real-Time Events](#circus_tent-Real-Time-Events)
   - [Data Lifecycle Diagram](#baby-older_man-Data-Lifecycle-Diagram)
 - [Used Packages](#gift-Used-Packages)
@@ -75,14 +74,17 @@ The concept I chose is the second one - the Artist Guesser.
 
 
 ### General features
-- Give points to the user that gave the correct answer first
-- Keep a scoreboard for the current session
+- Lets users guess the artwork
+<!-- - Gives feedback after a correct answer -->
+<!-- - Goes to the next round after a correct answer -->
+<!-- - Give points to the user that gave the correct answer first
+- Keep a scoreboard for the current session -->
 
 </br> 
 
 ### API based features
 - Fetch & show the an artwork 
-- Fetch & use the artworks artist
+- Fetch & use the artworks artists name
 
 </br>
 
@@ -97,9 +99,10 @@ Below is a list of features I'd love to add to Artist Guesser. The features are 
 
 **M** - Must haves  
 _These features are like requirements for the end product_  
-- [x] Set up chat with usernames 
+- [x] Set up chat
+- [x] Add sernames to chat
 - [x] Connect API
-- [x] Show images of API to user
+- [x] Show images of API to user using socket.io
 - [ ] Set up logic for guessing (answer must match artist name)
 - [ ] Go to next page after guessing correctly
 
@@ -110,14 +113,14 @@ _These features are wanted, but not necessary for a usable product_
 - [ ] Add styling
 - [ ] Implement UI states
 - [ ] Put own messages on the right side of the chat
-- [ ] Randomize order of artworks
+- [x] Randomize order of artworks
 - [ ] Set up point system
 - [ ] Set up scoreboard
 
 </br>
 
 **C** - Could haves  
-_These features can be added if these enough time to do so_  
+_These features can be added if there's enough time to do so_  
 - [ ] Give hints if the correct answer hasn't been given after a certain amount of time
 - [ ] Create rooms so multiple groups can play their own game at once
 
@@ -139,7 +142,7 @@ _These features can be added in the future_
 
 Artist Guesser has been designed and developed with the [Rijksmuseum API](https://data.rijksmuseum.nl/object-metadata/api/).  
 
-For this project I used the *Collection API*, with which you can search the collection.
+For this project I used the [Collection API](https://data.rijksmuseum.nl/object-metadata/api/#collection-api), with which you can search the collection.
 
 </br>
 
@@ -182,6 +185,16 @@ I have implemented the following points into **_Artist Guesser_**:
 </br>
 
 ### :end: Used endpoint & parameters
+<!-- parameters
+
+in endpoint
+key
+culture (language)
+ps (limit)
+
+in code
+involvedMaker
+ -->
 
 <!-- Gifinder uses one main endpoint, which can be seen below.  
 
@@ -211,41 +224,6 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 
 In order to access the API, you'll need to get an API key first. You can do so by registering for a [Rijksstudio account](https://www.rijksmuseum.nl/en/rijksstudio). After registrating, you will receive your API key right away, which you can find in the advanced settings of your newly created Rijksstudio account.
 
-
-</br>
-
-### :electric_plug: Connect to the API
-
-Below can be seen how I connect to the API and show the data on my index page.  
-
-[First I fetch the data](https://github.com/lisaoude/artist-guesser/blob/main/router/renders/index.js) using the url, my API key and a limit, which I have stored inside an ```.env``` file. When the fetch has been completed, an async function is carried out in which I store the data inside my ```artList``` variable. After that I render my index page, in which I use my ```artList``` variable.  
-
-```
-const index = (req, res) => {
-  fetch(`${url}?key=${key}&ps=${limit}`)
-    .then(async response => {
-      const data = await response.json()
-      const artList = data.artObjects
-
-      res.render('index', {
-        headTwo: 'Who made this artwork?',
-        artList: artList
-      });
-    });
-};
-```
-
-</br>
-
-[In my ```EJS``` file](https://github.com/lisaoude/artist-guesser/blob/main/views/index.ejs) can be seen how I then show the images on my index page.
-
-```
-<% artList.forEach(artobject=> { %>
-
-   <img src="<%=artobject.webImage.url %>" alt="<%=artobject.title %>">
-
-<% }); %>
-```
 
 </br>
 
