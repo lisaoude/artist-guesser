@@ -9,12 +9,12 @@ app.set('view engine', 'ejs');
 
 const index = (req, res) => {
 
-  const artList =
+  // const artList = 
 
-    res.render('index', {
-      headTwo: 'Who made this artwork?',
-      artList: artList
-    });
+  res.render('index', {
+    headTwo: 'Who made this artwork?',
+    artList: artList
+  });
 };
 
 
