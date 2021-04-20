@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 
-const getData = url => {
-  return fetch(url)
+const getData = endpoint => {
+  return fetch(endpoint)
     .then(res => res.json())
     .catch(_ => null)
 }
