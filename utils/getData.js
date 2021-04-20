@@ -6,4 +6,4 @@ const getData = url => {
     .catch(_ => null)
 }
 
-module.exports = getData
+module.exports = getData;

@@ -17,9 +17,16 @@ const filterData = async () => {
     return artists.includes(artObject.principalOrFirstMaker)
   })
   return filteredData
-  // console.log(filteredData)
 }
 
 filterData()
 
-module.exports = filterData;
+const sortData = async () => {
+  const data = await filterData()
+  const sortedData = data.sort(() => .5 - Math.random())
+  return sortedData
+}
+
+sortData()
+
+module.exports = sortData;
