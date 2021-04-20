@@ -9,7 +9,7 @@ const limit = process.env.LIMIT;
 // artists I want to filter on
 const artists = ['Johannes Vermeer', 'Rembrandt van Rijn', 'Vincent van Gogh', 'Karel Appel']
 
-// filter =ing
+// filtering
 const filterData = async () => {
   const endpoint = `${url}?key=${key}&ps=${limit}`
   const data = await getData(endpoint)
