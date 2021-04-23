@@ -185,6 +185,7 @@ I have implemented the following points into **_Artist Guesser_**:
 </br>
 
 ### :end: Used endpoint & parameters
+TBD
 <!-- parameters
 
 in endpoint
@@ -229,6 +230,12 @@ In order to access the API, you'll need to get an API key first. You can do so b
 
 
 ### :circus_tent: Real-Time Events
+To be described in more detail
+
+- Connection
+- Start
+- Message
+- Answer
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -243,13 +250,10 @@ In order to access the API, you'll need to get an API key first. You can do so b
 <!-------------------------- New Paragraph -------------------------->
 
 ### :baby::older_man: Data Lifecycle Diagram
+Note: not all events in this diagram have been implemented in my code yet
 
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+![data_lifecycle_diagram_lisa_v1](https://user-images.githubusercontent.com/57795294/115835124-3a57cb00-a416-11eb-8d6b-e30b93607102.png)
+
 
 </br>
 
