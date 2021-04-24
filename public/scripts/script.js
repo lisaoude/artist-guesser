@@ -1,22 +1,26 @@
 // variables for chat
 const socket = io()
-const form = document.querySelector('form')
-const username = form.querySelector('input#name')
+const form = document.querySelector('#chatForm')
 const message = form.querySelector('input#message')
 const messages = document.querySelector('#messages')
+
+// variables for display name
+const urlParams = new URLSearchParams(window.location.search);
+const name = urlParams.get('name');
 
 //variables for images
 const picture = document.querySelector('img')
 const text = document.querySelector('h2')
 
+
 form.addEventListener('submit', (event) => {
   event.preventDefault()
   if (message.value) {
     socket.emit('message', {
-      name: username.value,
+      name,
       message: message.value
     })
-    username.style.display = 'none'
+    // username.style.display = 'none'
     message.value = ''
   }
 })
@@ -37,7 +41,8 @@ socket.on('message', data => {
 })
 
 
-socket.on('image', (textandimage) => {
+socket.on('showImage', (textandimage) => {
   picture.src = textandimage.image;
   text.innerText = textandimage.text;
 })
+
