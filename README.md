@@ -103,7 +103,7 @@ _These features are like requirements for the end product_
 - [x] Add sernames to chat
 - [x] Connect API
 - [x] Show images of API to user using socket.io
-- [ ] Set up logic for guessing (answer must match artist name)
+- [x] Set up logic for guessing (answer must match artist name)
 - [ ] Go to next page after guessing correctly
 
 </br>
@@ -122,14 +122,14 @@ _These features are wanted, but not necessary for a usable product_
 **C** - Could haves  
 _These features can be added if there's enough time to do so_  
 - [ ] Give hints if the correct answer hasn't been given after a certain amount of time
-- [ ] Create rooms so multiple groups can play their own game at once
+- [ ] Create rooms so multiple groups can play their own game at the same time
 
 </br>
 
 **W** - Would haves  
 _These features can be added in the future_  
 - [ ] Set up all time best scoreboard
-- [ ] Set up point system based on time (1000 points to start, lose 1 point every millisecond you don't answer correctly)
+- [ ] Set up point system based on time (1000 points to start, lose 1 point every second you don't answer correctly)
 
 </br>
 
