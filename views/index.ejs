@@ -1,19 +1,13 @@
 <%- include('./partials/head.ejs') %>
 
-  <main>
-
-    <section>
-      <img src="" alt="">
-      <h2></h2>
-    </section>
+  <main id='index'>
 
     <section>
       <h1>Artist Guesser</h1>
-      <ul id='messages'></ul>
-      <form>
-        <input id='name' type='text' placeholder='naam'>
-        <input id='message' type="text" placeholder='bericht'>
-        <button type='submit'>Send</button>
+      <form action='/game' method='get'>
+        <input id='name' type='text' placeholder='Naam' name='name' required=required>
+        <input id='message' class='hidden' type="text" placeholder='Bericht'>
+        <button type='submit'>Begin met spelen!</button>
       </form>
     </section>
   </main>

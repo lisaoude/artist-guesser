@@ -9,11 +9,12 @@ const
   io = require('socket.io')(http),
   port = process.env.PORT || 5000;
 
-// 'Imports'
-const sortData = require('./utils/filterData');
-
 // Routes
-const routes = require('./router/routes');
+const routes = require('./router');
+
+// 'Imports'
+const sortData = require('./utils/organizeData');
+
 
 // Middleware & Static files
 app
@@ -23,14 +24,14 @@ app
 
 
 // SOCKET
-
 // connection event
 io.on('connection', async (socket) => {
+
+  console.log('a user has connected')
 
   // general variables
   const data = await sortData()
   const artist = data[0].principalOrFirstMaker
-
 
   // userConnected event
   socket.on('userConnected', (username) => {
@@ -43,20 +44,21 @@ io.on('connection', async (socket) => {
     text: data[0].title,
     image: data[0].webImage.url
   }
-  io.emit('image', textandimage)
+  io.emit('showImage', textandimage)
 
 
   // message event
   socket.on('message', (chatMessage) => {
-    io.emit('message', chatMessage)
 
     if (chatMessage.message === artist) {
 
-      const user = chatMessage.name
+      let user = chatMessage.name
+
       chatMessage.name = ''
-      chatMessage.message = `${user} guessed right!`
+      chatMessage.message = `${user} guessed right! The answer was ${artist}`
     }
     io.emit('message', chatMessage)
+
   })
 
 
@@ -71,4 +73,3 @@ io.on('connection', async (socket) => {
 http.listen(port, () => {
   console.log(`App is launched on http://localhost:${port}`)
 })
-
