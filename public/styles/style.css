@@ -98,3 +98,7 @@ img {
   width: 15em;
   height: 15em;
 }
+
+.hidden {
+  display: none;
+}
