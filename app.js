@@ -31,26 +31,44 @@ io.on('connection', async (socket) => {
 
   // general variables
   const data = await sortData()
-  const artist = data[0].principalOrFirstMaker
+  // let artist = data[0].principalOrFirstMaker
 
   // userConnected event
   socket.on('userConnected', (username) => {
     io.emit('userConnected', username);
+
+    users.push({
+      username: userName,
+      score: 0,
+
+      // every client has their own socket.id
+      // I store this with the name to know who is which user
+      id: socket.id
+    });
   })
 
 
+
+
   // showing images
-  const textandimage = {
+  const artData = {
     text: data[0].title,
     image: data[0].webImage.url
   }
-  io.emit('showImage', textandimage)
+  io.emit('showImage', artData)
 
 
   // message event
   socket.on('message', (chatMessage) => {
 
-    if (chatMessage.message === artist) {
+    let message = chatMessage.message
+    let guess = message.toLowerCase();
+
+    let artist = data[0].principalOrFirstMaker
+    let correct = artist.toLowerCase();
+
+
+    if (guess === correct) {
 
       let user = chatMessage.name
 
@@ -66,10 +84,11 @@ io.on('connection', async (socket) => {
   socket.on('disconnection', () => {
     console.log('a user has disconnected')
   })
-})
+
+});
 
 
 // Listen for requests
 http.listen(port, () => {
   console.log(`App is launched on http://localhost:${port}`)
-})
+});
