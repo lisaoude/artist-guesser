@@ -24,6 +24,9 @@ app
 
 
 // SOCKET
+
+let users = [];
+
 // connection event
 io.on('connection', async (socket) => {
 
@@ -34,19 +37,21 @@ io.on('connection', async (socket) => {
   // let artist = data[0].principalOrFirstMaker
 
   // userConnected event
-  socket.on('userConnected', (username) => {
-    io.emit('userConnected', username);
+  socket.on('userConnected', (userName) => {
+
+    console.log('server user connect')
+
+    io.emit('userConnected', userName)
 
     users.push({
       username: userName,
       score: 0,
 
       // every client has their own socket.id
-      // I store this with the name to know who is which user
+      //  I store this with the name to know who is which user
       id: socket.id
     });
   })
-
 
 
 
@@ -70,9 +75,9 @@ io.on('connection', async (socket) => {
 
     if (guess === correct) {
 
-      let user = chatMessage.name
+      let user = chatMessage.username
 
-      chatMessage.name = ''
+      chatMessage.username = ''
       chatMessage.message = `${user} guessed right! The answer was ${artist}`
     }
     io.emit('message', chatMessage)
@@ -81,7 +86,7 @@ io.on('connection', async (socket) => {
 
 
   // disconnection event
-  socket.on('disconnection', () => {
+  socket.on('disconnect', () => {
     console.log('a user has disconnected')
   })
 
