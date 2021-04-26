@@ -7,7 +7,7 @@ const key = process.env.KEY;
 const limit = process.env.LIMIT;
 
 // artists I want to filter on
-const artists = ['Johannes Vermeer', 'Rembrandt van Rijn', 'Vincent van Gogh', 'Karel Appel']
+const artists = ['Frans Hals', 'Johannes Vermeer', 'Aelbert Cuyp', 'Rembrandt van Rijn', 'Jan Both', 'Vincent van Gogh']
 
 // filtering
 const filterData = async () => {
