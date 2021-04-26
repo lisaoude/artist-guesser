@@ -57,7 +57,7 @@ socket.on('message', ({ message, username }) => {
 })
 
 
-socket.on('showImage', (artData) => {
+socket.on('showData', (artData) => {
   picture.src = artData.image;
   text.innerText = artData.text;
 })

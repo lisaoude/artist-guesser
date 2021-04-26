@@ -23,26 +23,24 @@ app
   .use(routes);
 
 
-// SOCKET
 
+//___ SOCKET ___//
 let users = [];
+let round = 0;
 
-// connection event
 io.on('connection', async (socket) => {
 
-  console.log('a user has connected')
-
   // general variables
-  const data = await sortData()
-  // let artist = data[0].principalOrFirstMaker
+  const sortedData = await sortData()
 
-  // userConnected event
+
+  //___ USER CONNECTED ___//
   socket.on('userConnected', (userName) => {
 
-    console.log('server user connect')
-
+    // feedback who joined the game
     io.emit('userConnected', userName)
 
+    // storing user data for feedback on disconnect
     users.push({
       username: userName,
       score: 0,
@@ -54,40 +52,72 @@ io.on('connection', async (socket) => {
   })
 
 
-
-  // showing images
-  const artData = {
-    text: data[0].title,
-    image: data[0].webImage.url
+  //___ API DATA ___//
+  let artData = {
+    text: sortedData[round].title,
+    image: sortedData[round].webImage.url
   }
-  io.emit('showImage', artData)
+  io.emit('showData', artData)
 
 
-  // message event
+  //___ CHAT ___//
   socket.on('message', (chatMessage) => {
+
+    io.emit('message', chatMessage)
 
     let message = chatMessage.message
     let guess = message.toLowerCase();
 
-    let artist = data[0].principalOrFirstMaker
+    let artist = sortedData[round].principalOrFirstMaker
     let correct = artist.toLowerCase();
 
 
+    //___ CORRECT GUESS ___//
     if (guess === correct) {
 
       let user = chatMessage.username
 
       chatMessage.username = ''
       chatMessage.message = `${user} guessed right! The answer was ${artist}`
-    }
-    io.emit('message', chatMessage)
 
+      io.emit('message', chatMessage)
+
+
+      //___ SHOW NEXT ARTWORK ___//
+      if (round >= sortedData.length - 1) {
+        round = 0;
+
+        sortData()
+          .then(() => console.log('next artwork'))
+          .catch((err) => console.log(err))
+
+      } else {
+        // add +1 to round
+        round = round + 1;
+      }
+
+      let artData = {
+        text: sortedData[round].title,
+        image: sortedData[round].webImage.url
+      }
+      io.emit('showData', artData)
+    }
   })
 
 
-  // disconnection event
+  //___ DISCONNECTION ___//
   socket.on('disconnect', () => {
-    console.log('a user has disconnected')
+
+    let name = '';
+
+    users.forEach(user => {
+      if (user.id == socket.id) {
+        name = user.username;
+        users = users.filter(user => user.id != socket.id)
+      }
+    });
+
+    io.emit('disconnected', name)
   })
 
 });
