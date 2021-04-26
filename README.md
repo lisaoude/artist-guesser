@@ -434,4 +434,5 @@ This repository is licensed as [MIT](https://github.com/lisaoude/real-time-web-2
 - npm: dotenv. (2019, October 16). Retrieved April 9, 2021, from [NPMjs.com](https://www.npmjs.com/package/dotenv)
 - npm: node-fetch. (2020, September 5). Retrieved April 9, 2021, from [NPMjs.com](https://www.npmjs.com/package/node-fetch)
 - npm: socket.io. (2021, April 1). Retrieved April 12, 2021, from [NPMjs.com](https://www.npmjs.com/package/socket.io)
-
+- Example from Justus Sturkenboom (n.d.). ju5tu5/barebonechat. Retrieved April 12, 2021, from [GitHub Repo](https://github.com/ju5tu5/barebonechat)
+- MDN. Math.random() (2021, April 23). Retrieved April 20, 2021, from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
