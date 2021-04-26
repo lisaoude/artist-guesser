@@ -32,26 +32,26 @@ let round = 0;
 //___ CONNECTION ___//
 io.on('connection', async (socket) => {
 
-  sortedData = await sortData()
-
   //___ USER CONNECTED ___//
   socket.on('userConnected', (userName) => {
 
-    // feedback who joined the game
-    io.emit('userConnected', userName)
+    const connectMsg = `${userName} has joined the game`
 
-    // storing user data for feedback on disconnect
+    io.emit('userConnected', connectMsg);
+
+    // storing user data to acces later for score and when someone disconnects
     users.push({
       username: userName,
-      score: 0,
-
-      // every client has their own socket.id
-      //  I store this with the name to know who is which user
+      // every client has a socket.id so i store the socket id together with the name
+      // so i know which users are which
       id: socket.id
     });
-    io.emit('userConnected', userName)
+
+    // io.emit('scoreBoard', users);
   })
 
+
+  sortedData = await sortData()
 
   //___ API DATA ___//
   let artData = {
@@ -107,19 +107,42 @@ io.on('connection', async (socket) => {
 
 
   //___ DISCONNECTION ___//
-  socket.on('disconnect', () => {
+  // socket.on('disconnect', () => {
 
+  //   let userName = '';
+
+  //   // getting name for feedback later to get to all users
+  //   // write different
+  //   users.forEach(user => {
+  //     if (user.id == socket.id) {
+  //       userName = user.username;
+  //       // delete user 
+  //       users = users.filter(user => user.id != socket.id);
+  //     }
+  //   });
+
+  //   const leaveMsg = `${userName} has left the game`
+
+  //   io.emit('disconnected', leaveMsg);
+  // })
+
+  socket.on('disconnect', () => {
     let name = '';
 
+    // getting name for feedback later to get to all users
+    // write different
     users.forEach(user => {
       if (user.id == socket.id) {
         name = user.username;
-        users = users.filter(user => user.id != socket.id)
+        // delete user 
+        users = users.filter(user => user.id != socket.id);
       }
-
-      io.emit('disconnected', name)
     });
+
+    io.emit('disconnected', name)
+
   })
+
 });
 
 

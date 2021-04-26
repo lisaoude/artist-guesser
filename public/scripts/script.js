@@ -1,7 +1,3 @@
-//___ VARIABLES FOR DISPLAY NAME ___//
-const urlParams = new URLSearchParams(window.location.search);
-let username = urlParams.get('name');
-
 //___ VARIABLES FOR CHAT ___//
 const socket = io()
 const form = document.querySelector('#chatForm')
@@ -12,16 +8,23 @@ const messages = document.querySelector('#messages')
 const picture = document.querySelector('img')
 const text = document.querySelector('h2')
 
+//___ VARIABLES FOR DISPLAY NAME ___//
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get('name');
+
 
 //___ USER CONNECTED ___//
+
 socket.emit('userConnected', username);
-socket.on('userConnected', (username) => {
+
+socket.on('userConnected', (joinMsg) => {
 
   const joinMessage = document.createElement('p');
 
-  joinMessage.innerText = `${username} has joined the game`;
+  joinMessage.innerText = joinMsg
   messages.appendChild(joinMessage);
 })
+
 
 //___ CHAT 1 ___//
 form.addEventListener('submit', (event) => {
@@ -42,8 +45,8 @@ socket.on('message', ({ message, username }) => {
   const name = document.createElement('p')
   const messageEl = document.createElement('p')
 
-  name.innerText = username
-  messageEl.innerText = message
+  name.textContent = username
+  messageEl.textContent = message
 
   element.appendChild(name)
   element.appendChild(messageEl)
@@ -55,16 +58,16 @@ socket.on('message', ({ message, username }) => {
 //___ API DATA ___//
 socket.on('showData', (artData) => {
   picture.src = artData.image;
-  text.innerText = artData.text;
+  text.textContent = artData.text;
 })
 
 
 //___ DISCONNECT ___//
-socket.on('disconnected', (username) => {
-  const disconnectMessage = document.createElement('p');
-  disconnectMessage.innerText = `${username} has left the game`;
-  messages.appendChild(disconnectMessage);
+socket.on('disconnected', (name) => {
+
+  const disconnectMessage = document.createElement('p')
+  disconnectMessage.textContent = `${name} has left the game`
+
+  messages.appendChild(disconnectMessage)
+
 })
-
-
-console.log(username)
