@@ -23,16 +23,16 @@ app
   .use(routes);
 
 
-
-//___ SOCKET ___//
+//______ SOCKET ______//
+//___ GENERAL VARIABLES ___//
+let sortedData;
 let users = [];
 let round = 0;
 
+//___ CONNECTION ___//
 io.on('connection', async (socket) => {
 
-  // general variables
-  const sortedData = await sortData()
-
+  sortedData = await sortData()
 
   //___ USER CONNECTED ___//
   socket.on('userConnected', (userName) => {

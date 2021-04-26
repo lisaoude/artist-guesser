@@ -83,7 +83,7 @@ The concept I chose is the second one - the Artist Guesser.
 </br> 
 
 ### API based features
-- Fetch & show the an artwork 
+- Fetch & show an artwork 
 - Fetch & use the artworks artists name
 
 </br>
@@ -100,7 +100,7 @@ Below is a list of features I'd love to add to Artist Guesser. The features are 
 **M** - Must haves  
 _These features are like requirements for the end product_  
 - [x] Set up chat
-- [x] Add sernames to chat
+- [x] Add usernames to chat
 - [x] Connect API
 - [x] Show images of API to user using socket.io
 - [x] Set up logic for guessing (answer must match artist name)
@@ -112,7 +112,7 @@ _These features are like requirements for the end product_
 _These features are wanted, but not necessary for a usable product_  
 - [ ] Add styling
 - [x] Randomize order of artworks
-- [x] Implemented forgiveness (lower/uppercase, .includes)
+- [x] Implement forgiveness (lower/uppercase, .includes)
 - [ ] Give feedback on who connects
 - [ ] Give feedback on who disconnects
 - [ ] Put own messages on the right side of the chat
@@ -226,7 +226,7 @@ The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data 
 
 ### :key: Get the API key
 
-In order to access the API, you'll need to get an API key first. You can do so by registering for a [Rijksstudio account](https://www.rijksmuseum.nl/en/rijksstudio). After registrating, you will receive your API key right away, which you can find in the advanced settings of your newly created Rijksstudio account.
+In order to access the API, you'll need to get an API key first. You can do so by registering for a [Rijksstudio account](https://www.rijksmuseum.nl/en/rijksstudio). After registering, you will receive your API key right away, which you can find in the advanced settings of your newly created Rijksstudio account.
 
 
 </br>
