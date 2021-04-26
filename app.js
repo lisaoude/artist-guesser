@@ -49,6 +49,7 @@ io.on('connection', async (socket) => {
       //  I store this with the name to know who is which user
       id: socket.id
     });
+    io.emit('userConnected', userName)
   })
 
 
@@ -73,7 +74,7 @@ io.on('connection', async (socket) => {
 
 
     //___ CORRECT GUESS ___//
-    if (guess === correct) {
+    if (guess.includes(correct)) {
 
       let user = chatMessage.username
 
@@ -115,11 +116,10 @@ io.on('connection', async (socket) => {
         name = user.username;
         users = users.filter(user => user.id != socket.id)
       }
+
+      io.emit('disconnected', name)
     });
-
-    io.emit('disconnected', name)
   })
-
 });
 
 

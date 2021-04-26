@@ -104,16 +104,19 @@ _These features are like requirements for the end product_
 - [x] Connect API
 - [x] Show images of API to user using socket.io
 - [x] Set up logic for guessing (answer must match artist name)
-- [ ] Go to next page after guessing correctly
+- [x] Go to next page after guessing correctly
 
 </br>
 
 **S** - Should haves  
 _These features are wanted, but not necessary for a usable product_  
 - [ ] Add styling
-- [ ] Implement UI states
-- [ ] Put own messages on the right side of the chat
 - [x] Randomize order of artworks
+- [x] Implemented forgiveness (lower/uppercase, .includes)
+- [ ] Give feedback on who connects
+- [ ] Give feedback on who disconnects
+- [ ] Put own messages on the right side of the chat
+- [ ] Implement UI states
 - [ ] Set up point system
 - [ ] Set up scoreboard
 
