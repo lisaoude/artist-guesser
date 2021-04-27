@@ -113,8 +113,8 @@ _These features are wanted, but not necessary for a usable product_
 - [ ] Add styling
 - [x] Randomize order of artworks
 - [x] Implement forgiveness (lower/uppercase, .includes)
-- [ ] Give feedback on who connects
-- [ ] Give feedback on who disconnects
+- [x] Give feedback on who connects
+- [x] Give feedback on who disconnects
 - [ ] Put own messages on the right side of the chat
 - [ ] Implement UI states
 - [ ] Set up point system
