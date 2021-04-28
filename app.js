@@ -129,7 +129,7 @@ io.on('connection', async (socket) => {
         round = 0;
 
         sortData()
-          .then(() => console.log('next artwork'))
+          .then(() => console.log('round has ended'))
           .catch((err) => console.log(err))
 
       } else {
