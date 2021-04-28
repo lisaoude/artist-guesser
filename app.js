@@ -9,12 +9,16 @@ const
   io = require('socket.io')(http),
   port = process.env.PORT || 5000;
 
+// Internals
+const url = process.env.URL;
+const key = process.env.KEY;
+const limit = process.env.LIMIT;
+
 // Routes
 const routes = require('./router');
 
 // 'Imports'
-const sortData = require('./utils/organizeData');
-
+const getData = require('./utils/getData');
 
 // Middleware & Static files
 app
@@ -23,9 +27,44 @@ app
   .use(routes);
 
 
+//______ FILTERING & SORTING DATA ______//
+// I originally did this in a separate file
+// But that resulted in not being able to stop the data
+// From reloading on every connection
+
+// artists I want to filter on
+const artists = ['Frans Hals', 'Johannes Vermeer', 'Aelbert Cuyp', 'Rembrandt van Rijn', 'Jan Both', 'Vincent van Gogh']
+
+// filtering
+const filterData = async () => {
+  const endpoint = `${url}?key=${key}&ps=${limit}`
+  const data = await getData(endpoint)
+  const filteredData = data.artObjects.filter(artObject => {
+    return artists.includes(artObject.principalOrFirstMaker)
+  })
+  return filteredData
+}
+
+filterData()
+
+// sorting
+let sortedData;
+const sortData = async () => {
+  const data = await filterData()
+  const sortingData = data.sort(() => .5 - Math.random())
+
+  sortedData = sortingData
+
+  return sortedData
+}
+
+sortData()
+  .then(() => console.log('loading the data..'))
+
+
+
 //______ SOCKET ______//
 //___ GENERAL VARIABLES ___//
-let sortedData;
 let users = [];
 let round = 0;
 
@@ -52,7 +91,7 @@ io.on('connection', async (socket) => {
   })
 
 
-  sortedData = await sortData()
+  // sortedData = await sortData()
 
   //___ API DATA ___//
   let artData = {
