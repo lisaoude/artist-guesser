@@ -20,6 +20,7 @@ socket.emit('userConnected', username);
 socket.on('userConnected', (joinMsg) => {
 
   const joinMessage = document.createElement('p');
+  joinMessage.classList.add('gameMsg')
 
   joinMessage.innerText = joinMsg
   messages.appendChild(joinMessage);
@@ -65,9 +66,11 @@ socket.on('showData', (artData) => {
 //___ DISCONNECT ___//
 socket.on('disconnected', (name) => {
 
-  const disconnectMessage = document.createElement('p')
-  disconnectMessage.textContent = `${name} has left the game`
+  if (name !== '') {
+    const disconnectMessage = document.createElement('p')
+    disconnectMessage.classList.add('gameMsg')
+    disconnectMessage.textContent = `${name} has left the game`
 
-  messages.appendChild(disconnectMessage)
-
+    messages.appendChild(disconnectMessage)
+  }
 })
