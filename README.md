@@ -225,14 +225,22 @@ In order to access the API, you'll need to get an API key first. You can do so b
 #### :zap: connection
 Once the user enters a username and presses the start button, a connection to the socket is made. This connection triggers the **showData** event, as well as the **userConnected** event.
 
+</br>
+
 #### :chart_with_upwards_trend: showData
 This event is triggered by the **connection** event. This event shows the API data client side.
+
+</br>
 
 #### :adult: userConnected
 This event is also triggered by the **connection** event. This event stores the given username with the socket.id, which is used in the _connection, correct answer and disconnection messages_. This event shows the previously mentioned connection message client side, using the username stored with the socket.id.
 
+</br>
+
 #### :speech_balloon: message
 When a user sends a message, this event is triggered. This event then triggers the server side check, which checks if the message that's being send is the correct answer. If yes, the message is shown client side and the _correct answer message_ is shown, using the username stored with the socket.id. After this, a new image is shown. If the message isn't the correct answer, it's just shown client side.
+
+</br>
 
 #### :wave: disconnect
 Once a user disconnects, the disconnect event is triggered. This event shows a disconnection message client side, using the username stored with the socket.id.
