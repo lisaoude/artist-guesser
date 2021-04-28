@@ -5,8 +5,8 @@ const message = form.querySelector('input#message')
 const messages = document.querySelector('#messages')
 
 //___ VARIABLES FOR API DATA ___//
-const picture = document.querySelector('img')
-const text = document.querySelector('h2')
+const picture = document.querySelector('#artimg')
+const text = document.querySelector('#arttext')
 
 //___ VARIABLES FOR DISPLAY NAME ___//
 const urlParams = new URLSearchParams(window.location.search);
@@ -48,6 +48,10 @@ socket.on('message', ({ message, username }) => {
 
   name.textContent = username
   messageEl.textContent = message
+
+  if (username == '') {
+    element.classList.add('gameRight')
+  }
 
   element.appendChild(name)
   element.appendChild(messageEl)
