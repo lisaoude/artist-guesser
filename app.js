@@ -39,11 +39,12 @@ io.on('connection', async (socket) => {
 
     io.emit('userConnected', connectMsg);
 
-    // storing user data to acces later for score and when someone disconnects
+    // storing user data to acces when someone disconnects
     users.push({
       username: userName,
-      // every client has a socket.id so i store the socket id together with the name
-      // so i know which users are which
+
+      // each client has their own socket.id
+      // I store this with the name, so I know who is leaving
       id: socket.id
     });
 
@@ -107,33 +108,14 @@ io.on('connection', async (socket) => {
 
 
   //___ DISCONNECTION ___//
-  // socket.on('disconnect', () => {
-
-  //   let userName = '';
-
-  //   // getting name for feedback later to get to all users
-  //   // write different
-  //   users.forEach(user => {
-  //     if (user.id == socket.id) {
-  //       userName = user.username;
-  //       // delete user 
-  //       users = users.filter(user => user.id != socket.id);
-  //     }
-  //   });
-
-  //   const leaveMsg = `${userName} has left the game`
-
-  //   io.emit('disconnected', leaveMsg);
-  // })
-
   socket.on('disconnect', () => {
     let name = '';
 
-    // getting name for feedback later to get to all users
-    // write different
+    // getting name for feedback
     users.forEach(user => {
       if (user.id == socket.id) {
         name = user.username;
+
         // delete user 
         users = users.filter(user => user.id != socket.id);
       }
