@@ -2,7 +2,8 @@
 
 _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-minor-web)_
 
-<!-- ![Mockups](https://user-images.githubusercontent.com/57795294/111635461-c7947800-87f7-11eb-94dc-198ce14e6aaa.png) -->
+![rtw_mockups](https://user-images.githubusercontent.com/57795294/116477437-e79a6b00-a87c-11eb-90b8-8aae2090ebe3.png)
+
 
 ---
 
@@ -12,8 +13,6 @@ _Made for Real-Time Web [@ cmda-minor-web 2020 - 2021](https://github.com/cmda-m
 
 **_Artist Guesser_**: the multiplayer game where you and your friends can guess the artist that made the artwork shown on the screen!  
 The first player to say the correct artists name in the chat, wins that round!
-
-<!-- The first player to say the correct artists name in the chat, gets 10 points added to their name. Still in first place after 10 rounds of guessing? You win! -->
 
 [My work can be viewed right here](https://artist-guesser.herokuapp.com/).  
 
@@ -72,19 +71,20 @@ The concept I chose is the second one - the Artist Guesser.
 
 ## :gem: What does this Web App do?
 
-
 ### General features
-- Lets users guess the artwork
-<!-- - Gives feedback after a correct answer -->
-<!-- - Goes to the next round after a correct answer -->
-<!-- - Give points to the user that gave the correct answer first
-- Keep a scoreboard for the current session -->
+- Play with multiple people
+- Lets users guess the artworks artist
+- Goes to the next image after a correct answer
+- Gives feedback after a correct answer
+- Gives feedback after a user connects & disconnects
+- Stores username with socket.id
 
 </br> 
 
 ### API based features
 - Fetch & show an artwork 
 - Fetch & use the artworks artists name
+- Check answer using the artworks artists name
 
 </br>
 
@@ -178,49 +178,37 @@ _All information can also be found on [the Rijksmuseum website](https://data.rij
 
 I have implemented the following points into **_Artist Guesser_**:
 
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+- **title** - to get the artworks title
+- **principleOrFirstMaker** - to filter artworks & to check answers
+- **webImage** - to show an image of the artwork
 
 </br>
 
 ### :end: Used endpoint & parameters
-TBD
-<!-- parameters
-
-in endpoint
-key
-culture (language)
-ps (limit)
-
-in code
-involvedMaker
- -->
-
-<!-- Gifinder uses one main endpoint, which can be seen below.  
+In this game, I use one main endpoint.
 
 ```
-https://api.giphy.com/v1/gifs/[parameters here]?&api_key=${key}`
-```  
+https://www.rijksmuseum.nl/api/nl/collection/
+```
 
 </br>
 
-I used the parameters below to get different data.
-- `${trendingType}`
-- `${req.params.id}`
+Added on to this endpoint, I used the parameters below to get my data.
+
+```
+?key=${key}    // personal API key
+?key=${limit}  // any number 1-100
+```
 
 </br>
 
-The `${trendingType}` parameter fetches the trending GIFs at the moment. When using the trendingType parameter, the following needs to be added at the very end `&limit=24`. The limit can be changed to any number.  
+In my code I use the following endpoints, to get the specific data I need.
 
-</br>
-
-The `${req.params.id}` parameter fetches a specific GIF by ID and gets the data that belongs to that ID.
-
--->
+```
+principleOrInvolvedMaker   // the artworks artist
+title                      // the artworks title
+webImage.url               // the artworks image
+```
 
 </br>
 
@@ -233,19 +221,21 @@ In order to access the API, you'll need to get an API key first. You can do so b
 
 
 ### :circus_tent: Real-Time Events
-To be described in more detail
 
-- Connection
-- Start
-- Message
-- Answer
+#### connection
+Once the user enters a username and presses the start button, a connection to the socket is made. This connection triggers the **showData** event, as well as the **userConnected** event.
 
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+#### showData
+This event is triggered by the **connection** event. This event shows the API data client side.
+
+#### userConnected
+This event is also triggered by the **connection** event. This event stores the given username with the socket.id, which is used in the _connection, correct answer and disconnection messages_. This event shows the previously mentioned connection message client side, using the username stored with the socket.id.
+
+#### message
+When a user sends a message, this event is triggered. This event then triggers the server side check, which checks if the message that's being send is the correct answer. If yes, the message is shown client side and the _correct answer message_ is shown, using the username stored with the socket.id. After this, a new image is shown. If the message isn't the correct answer, it's just shown client side.
+
+#### disconnect
+Once a user disconnects, the disconnect event is triggered. This event shows a disconnection message client side, using the username stored with the socket.id.
 
 </br>
 
