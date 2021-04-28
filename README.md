@@ -110,13 +110,12 @@ _These features are like requirements for the end product_
 
 **S** - Should haves  
 _These features are wanted, but not necessary for a usable product_  
-- [ ] Add styling
+- [x] Add styling
 - [x] Randomize order of artworks
 - [x] Implement forgiveness (lower/uppercase, .includes)
 - [x] Give feedback on who connects
 - [x] Give feedback on who disconnects
-- [ ] Put own messages on the right side of the chat
-- [ ] Implement UI states
+- [x] Implement feedback messages
 - [ ] Set up point system
 - [ ] Set up scoreboard
 
@@ -254,9 +253,7 @@ To be described in more detail
 <!-------------------------- New Paragraph -------------------------->
 
 ### :baby::older_man: Data Lifecycle Diagram
-Note: not all events in this diagram have been implemented in my code yet
-
-![data_lifecycle_diagram_lisa_v1](https://user-images.githubusercontent.com/57795294/115835124-3a57cb00-a416-11eb-8d6b-e30b93607102.png)
+![data_lifecycle_diagram_lisa_v2](https://user-images.githubusercontent.com/57795294/116472950-dbabaa80-a876-11eb-8531-97e7724a4d48.png)
 
 
 </br>
