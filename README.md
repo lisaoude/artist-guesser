@@ -253,7 +253,7 @@ To be described in more detail
 <!-------------------------- New Paragraph -------------------------->
 
 ### :baby::older_man: Data Lifecycle Diagram
-![data_lifecycle_diagram_lisa_v2](https://user-images.githubusercontent.com/57795294/116472950-dbabaa80-a876-11eb-8531-97e7724a4d48.png)
+![data_lifecycle_diagram_lisa_v2](https://user-images.githubusercontent.com/57795294/116473793-f0d50900-a877-11eb-86fb-c41d58971699.png)
 
 
 </br>
