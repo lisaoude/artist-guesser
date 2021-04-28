@@ -86,12 +86,8 @@ io.on('connection', async (socket) => {
       // I store this with the name, so I know who is leaving
       id: socket.id
     });
-
-    // io.emit('scoreBoard', users);
   })
 
-
-  // sortedData = await sortData()
 
   //___ API DATA ___//
   let artData = {
