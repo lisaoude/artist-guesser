@@ -1,104 +1,216 @@
+/***************************************/
+/*               GENERAL               */
+/***************************************/
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
+:root {
   font-family: Helvetica, Arial, sans-serif;
+  --standard-size: 1em;
+}
+
+/* hide scrollbars Chrome */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
   overflow: hidden;
   min-height: 100vh;
   min-width: 100vw;
-  background: #1C1C1C;
+  background-color: #1C1C1C;
+  position: relative;
 }
 
 main {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: 3em;
+  text-align: center;
   min-height: 100vh;
   min-width: 100%;
+}
+
+header {
+  position: absolute;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5em;
+  background-color: #6CAF94;
+}
+
+header img {
+  width: 3em;
+  height: auto;
+  margin: 0 1.5em;
+}
+
+header h1 {
+  font-size: calc( 2 * var(--standard-size));
+  color: #FFFFFF;
 }
 
 section {
-  width: 20em;
-  height: 25em;
-  background: #F5F5F5;
-  border-radius: 2em;
-  box-shadow: 0 5px 10px 0 #FF0099;
+  margin: 4em;
+}
+
+
+/***************************************/
+/*              GAME PAGE              */
+/***************************************/
+/* IMG */
+#game section:nth-of-type(1) {
+  position: relative;
+  width: 40em;
+  height: 77vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section h1 {
-  margin: 0;
-  padding: 0;
-  padding-top: 1em;
-  font-weight: lighter;
-  text-transform: uppercase;
-  font-size: 1em;
-}
-
-section ul {
-  margin: 0;
-  padding: .2em;
-  list-style-type: none;
-  flex-grow: 2;
-  width: 18em;
-  overflow-x: scroll;
-}
-
-section ul > li {
-  padding: 0.5em 1em;
-  font-size: .8em;
-  color: #000000;
-}
-
-section form {
-  margin: 1em 0;
-  padding: 0;
-  width: 18em;
-  height: 2em;
-  display: flex;
-  flex-direction: column;
-}
-
-section form input {
-  margin: 0.5em;
-  padding: 10px 20px;
-  border: none;
+#game section:nth-of-type(1) img {
+  max-width: 36em;
   width: auto;
-  height: 2em;
-  border-radius: 2em;
-  opacity: 80%;
-  outline: none;
+  height: 31em;
+  object-fit: contain;
+  margin-bottom: 1em;
 }
 
-section form input:first-of-type {
-  margin-top: 4em;
-}
-
-section form > button {
-  width: auto;
-  height: 3em;
-  background: #000FFF;
-  border: 1px solid #FFFFFF;
-  border-radius: 2em;
-  padding: 10px 15px;
-  margin-left: .2em;
-  outline: none;
+#game section:nth-of-type(1) h2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
   color: #FFFFFF;
-  font-size: 1em;
+}
+
+/* CHAT */
+#game section:nth-of-type(2) {
+  position: relative;
+  width: 36em;
+  height: 80vh;
+  background-color: #EEEEEE;
+  border-radius: 1.5em;
+}
+
+#game section:nth-of-type(2) div {
+  padding: 1em;
+  background-color: #4C9879;
+  border-radius: 1.5em 1.5em 0px 0px;
+}
+
+#game section:nth-of-type(2) div h1 {
+  color: #FFFFFF;
+  font-size: calc( 1.75 * var(--standard-size));
+}
+
+#game section:nth-of-type(2) ul {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  width: 80%;
+  height: 26em;
+  margin: 0 auto;
+  padding: 1em;
+  list-style: none;
+  color: #000000;
+  text-align: left;
+  overflow-y: scroll;
+}
+
+#game section:nth-of-type(2) ul li {
+  background: linear-gradient(90deg, #6CAF94 4.5%, #FFFFFF 4.5%);
+  border-radius: 10px;
+  max-width: 100%;
+  padding: 0.5em;
+  list-style: none;
+  margin-bottom: 0.75em;
+  color: #000000;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+#game section:nth-of-type(2) ul li p:first-of-type {
+  font-size: calc( 1.15 * var(--standard-size));
   font-weight: 700;
+  color:  #257C59;
 }
 
-img {
-  width: 15em;
-  height: 15em;
+#game section:nth-of-type(2) ul li p {
+  margin: 5px 5px 5px 25px;
 }
 
+.gameMsg {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 1em;
+  list-style: none;
+  margin-bottom: 0.75em;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/* need to do background instead of background-color here */
+/* otherwise it's less specific than the regular messages */
+#game section:nth-of-type(2) ul li.gameRight {
+  background: linear-gradient(90deg, #6CAF94 100%, #FFFFFF 100%);
+}
+
+/* FORM */
+#game section:nth-of-type(2) form{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #6CAF94;
+  padding: 1em;
+  border-radius: 0px 0px 1.5em 1.5em;
+}
+
+#game section:nth-of-type(2) input{
+  width: 100%;
+  height: 1.5em;
+  padding: 1em 1.5em 1em 1em;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+/* BUTTON */
+#game section:nth-of-type(2) button {
+  width: 7em;
+  height: auto;
+  background-color: #4C9879;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  padding: 1em;
+  margin: 0em 0em 0em -1em ;
+  text-align: center;
+  transition: .5s ease;
+}
+
+#game section:nth-of-type(2) button:hover,
+#game section:nth-of-type(2) button:focus  {
+  background-color: #257C59;
+  cursor: pointer;
+}
+
+/* HIDE CLASS */
 .hidden {
   display: none;
 }
