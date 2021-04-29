@@ -219,8 +219,10 @@ In order to access the API, you'll need to get an API key first. You can do so b
 
 </br>
 
+---
 
-### :circus_tent: Real-Time Events
+
+## :circus_tent: Real-Time Events
 
 #### :zap: connection
 Once the user enters a username and presses the start button, a connection to the socket is made. This connection triggers the **showData** event, as well as the **userConnected** event.
@@ -247,10 +249,12 @@ Once a user disconnects, the disconnect event is triggered. This event shows a d
 
 </br>
 
+---
+
 
 <!-------------------------- New Paragraph -------------------------->
 
-### :baby::older_man: Data Lifecycle Diagram
+## :baby::older_man: Data Lifecycle Diagram
 ![data_lifecycle_diagram_lisa_v2](https://user-images.githubusercontent.com/57795294/116474252-8ffa0080-a878-11eb-9d34-075299024884.png)
 
 
